@@ -29,6 +29,6 @@ public class ConfigManager extends Configuration
     {
         config = new Configuration(new File(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + dir + File.separator + modidName + ".cfg"));
     }
-    
+   
    
 }

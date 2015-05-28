@@ -8,14 +8,10 @@ import mods.common.logger.CoreLogger;
 import mods.common.server.CommonProxy;
 
 /**
- * @author Zach
+ * @author RoboRave
  */
 public class DedicatedServerProxy extends CommonProxy 
-{
-	@Override
-	public void Load() 
-	{}
-	
+{	
 	/**
 	 *  the main part of the proxy
 	 */

@@ -14,7 +14,6 @@ public class CoreLogger {
 	public static void init(){
 		log = LogManager.getLogger(Library.modid);
 		configured = true;
-		//log.setParent(LogManager.getLogger("FML"));
 	}
 
 	public static void log(Level level, String message,Object... params){

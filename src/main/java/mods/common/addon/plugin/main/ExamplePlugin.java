@@ -11,7 +11,7 @@ import mods.common.addon.plugin.common.Info.PreInit;
  * @author Zach
  *
  */
-@Info(name = "Example-Plugin", version = "0.1.0")
+@Info(name = "Example-Plugin", version = "0.1.0", testID = "EDM")
 public class ExamplePlugin implements Plugin
 {
     @Override

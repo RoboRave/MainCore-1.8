@@ -35,4 +35,6 @@ public @interface Info
 	String name();
 	
 	String version();
+	
+	String testID() default "";
 }

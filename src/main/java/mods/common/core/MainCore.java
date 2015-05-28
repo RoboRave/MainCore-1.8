@@ -79,7 +79,6 @@ import org.apache.logging.log4j.Level;
 		/**
 		 * @param event the helping part
 		 */
-		@SuppressWarnings("static-access")
 		@Mod.EventHandler
 		public void preInit(FMLPreInitializationEvent event) 
 		{
@@ -94,12 +93,12 @@ import org.apache.logging.log4j.Level;
 			
 	        File file2 = new File(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + "MainCore" + File.separator + metadata.name+ ".config");
 			
-	        this.config = new Configuration(file2);
+	        MainCore.config = new Configuration(file2);
 			syncConfig();
 			
 			ConfigManager.CreateConfig(event, "MainCore", metadata.name);
-			this.plugin = ConfigManager.config.get(ConfigManager.config.CATEGORY_GENERAL, this.Plugin, true, this.descriptionPlugin).getBoolean(true);
-			this.dev = ConfigManager.config.get(ConfigManager.config.CATEGORY_GENERAL, this.Dev, true, this.descriptionDEV).getBoolean(true);
+			this.plugin = ConfigManager.config.get(Configuration.CATEGORY_GENERAL, this.Plugin, true, this.descriptionPlugin).getBoolean(true);
+			this.dev = ConfigManager.config.get(Configuration.CATEGORY_GENERAL, this.Dev, true, this.descriptionDEV).getBoolean(true);
 			ConfigManager.config.save();
 			
 				/**
@@ -193,41 +192,10 @@ import org.apache.logging.log4j.Level;
 		}
 		/**
 		 * @param s the message
-		 * @param warning is it a warning
 		 */
-		public static void console(String s, boolean warning)
+		public static void console(String s)
 		{
 		        StringBuilder sb = new StringBuilder();
-		        CoreLogger.log(warning ? Level.WARN : Level.INFO,sb.append("[").append(Library.version).append("] ").append(s).toString());
+		        CoreLogger.log(Level.INFO,sb.append("[").append(Library.version).append("] ").append(s).toString());
 		}
-	
-		    @SuppressWarnings("javadoc")
-			public static void console(String s)
-		    {
-		        console(s, false);
-		    }
-	
-		    @SuppressWarnings("javadoc")
-			public static void console(int i)
-		    {
-		        console((new Integer(i)).toString());
-		    }
-	
-		    @SuppressWarnings("javadoc")
-			public static void console(boolean b)
-		    {
-		        console((new Boolean(b)).toString());
-		    }
-	
-		    @SuppressWarnings("javadoc")
-			public static void console(float f)
-		    {
-		        console((new Float(f)).toString());
-		    }
-	
-		    @SuppressWarnings("javadoc")
-			public static void console(double d)
-		    {
-		        console((new Double(d)).toString());
-		    }
 	}

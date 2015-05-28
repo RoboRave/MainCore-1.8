@@ -120,6 +120,16 @@ public class ConfigScreen extends GuiScreen
 			} catch (IllegalAccessException e) {
 				e.printStackTrace();
 			}
+			try {
+				shifty = drawLine(String.format("Test ID: '%s' ", this.selectedMod.newInstance().meta().testID), offset, shifty);
+			} catch (InstantiationException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IllegalAccessException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+
             
             
             int rightSide = this.width - offset - 20;
